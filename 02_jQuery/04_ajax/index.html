@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TEST</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+$(function() {
+  $.get('http://www.yahoo.co.jp' , function(data){
+    $('.result').html(data);
+    $('p').append(data);
+});
+</script>
+</head>
+<body>
+
+<p>test</p>
+
+</body>
+</html>
+
+
+ 
