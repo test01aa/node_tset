@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+<script>  
+  $(function() {  
+    var count = 0;
+    var countup = function(){
+        count += 1;
+       $("ul").append('<li>aaa' + count + '</li>');
+    }
+    setInterval(countup,1000);
+ });   
+</script> 
+</head>  
+
+<body>
+
+<h1>Hello World1</h1>
+<h2>This is a heading</h2>
+<ul>
+</ul>
+
+</body>
+</html>
+
+

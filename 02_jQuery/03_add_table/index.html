@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TEST</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+$(function() {
+  var addRow;
+
+  addRow = function() {
+  	$('#nameTable').append('<tr><td>new_user</td><td>2200</td><td>休憩室</td><td></td></tr>');
+  }
+
+  var countup = function(){
+    addRow();
+  }
+  setInterval(countup,1000);
+
+  $('#addRow').on('click', function() {
+    addRow();
+  });
+
+});
+</script>
+</head>
+<body>
+<h2>テーブル</h2>
+
+<button type="button" id="addRow">1行追加</button>
+<table border="1" id="nameTable">
+  <thead>
+    <tr>
+      <th>ユーザID</th>
+      <th>レート</th>
+      <th>対局室</th>
+      <th>対局相手</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>player01</td>
+      <td>1900</td>
+      <td>30秒</td>
+      <td>player02</td>
+    </tr>
+
+    <tr>
+      <td>player02</td>
+      <td>1850</td>
+      <td>30秒</td>
+      <td>player01</td>
+    </tr>
+
+    <tr>
+      <td>aaaa</td>
+      <td>500</td>
+      <td>10切れ</td>
+      <td>bbb</td>
+    </tr>
+
+    <tr>
+      <td>bbb</td>
+      <td>500</td>
+      <td>10切れ</td>
+      <td>aaaa</td>
+    </tr>
+
+  </tbody>
+</table>
+
+</body>
+</html>
+
+
