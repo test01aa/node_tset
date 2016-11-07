@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TEST</title>
+ <title>TEST</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 </script>
 
 <script type="text/javascript">
 $(function() {
-  $.get('http://www.yahoo.co.jp' , function(data){
-    $('.result').html(data);
-    $('p').append(data);
-});
+
+setInterval(function(){
+$.ajax({
+    url: 'json/data.json',
+    dataType: 'json',
+    data: {name: 'chara'},
+    success: function(data){
+        var dataArray = data.charas;
+        var wkStr = "";
+        $.each(dataArray, function(i){
+          wkStr += "<p>id: " + dataArray[i].id + "¡¡Character: " + dataArray[i].chara + "¡¡¡¡(CV: " + dataArray[i].cv + ")</p>";
+        });
+        $(".nameData2").text(wkStr);
+    }
+})
+},5000);
+}); 
+
+
 </script>
 </head>
 <body>
 
-<p>test</p>
+<div class="nameData">
+  <p>ajax test</p>
+</div>
+
+<div class="nameData2">
+</div>
 
 </body>
 </html>
 
-
- 

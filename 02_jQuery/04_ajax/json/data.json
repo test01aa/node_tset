@@ -1,0 +1,20 @@
+ 
+{
+  "charas":[
+    {
+      "id": 1,
+      "chara":"Shimada Mayuuuuuuuuuuuuuuuuu",
+      "cv":"Yoshioka Mayu"
+    },
+    {
+      "id": 2,
+      "chara":"Hayashida Airi",
+      "cv":"Eino Airi"
+    },
+    {
+      "id": 3,
+      "chara":"Okamoto Miyu",
+      "cv":"Takagi Miyu"
+    }
+  ]
+}
