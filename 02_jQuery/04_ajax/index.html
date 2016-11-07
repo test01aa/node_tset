@@ -19,7 +19,7 @@ $.ajax({
         $.each(dataArray, function(i){
           wkStr += "<p>id: " + dataArray[i].id + "¡¡Character: " + dataArray[i].chara + "¡¡¡¡(CV: " + dataArray[i].cv + ")</p>";
         });
-        $(".nameData2").text(wkStr);
+        $(".nameData2").html(wkStr);
     }
 })
 },5000);
