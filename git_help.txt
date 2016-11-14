@@ -25,3 +25,15 @@ git remote add origin https://github.com/test01aa/node_tset.git
 git push -u origin master
 
 
+-----------------------------------------------------------------
+--  リモートからの追加方法
+-----------------------------------------------------------------
+git config --global user.name test01aa
+git remote set-url origin https://test01aa@github.com/test01aa/node_tset.git
+git push  origin master
+
+
+
+
+
+
