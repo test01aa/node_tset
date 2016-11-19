@@ -10,6 +10,7 @@ function foo(a,b,c){
   console.log(a + b + c);
 }
 
+console.log('\nsample01 callbackサンプル');
 doSomething(foo);
 
 
@@ -24,36 +25,28 @@ function doSomething2(callback,callback_arg){
   callback(callback_arg);
 }
 
+console.log('\nsample02  引数も渡す');
 doSomething2(foo2,'test_arg_desu');
 
 
 //**********************************************
-// callback ネスト 
+// callbackサンプル (objectを渡しfieldを更新して返却)
 //**********************************************
-var log = '';
-function step1(callback ,log){
-  var callback2;
-  log += 'step1 ';
-  callback(callback2,log);
-}
-function step2(callback , log){
-  var callback2;
-  log += 'step2 ';
-  callback(callback2,log);
-}
-function step3(log){
-  log += 'step3 ';
-  console.log(log);
+var Cls           = function(args){this.p01 = args;      }
+Cls.prototype.m01 = function(args){this.p01 = args;      }
+Cls.prototype.m02 = function(    ){console.log(this.p01);}
+
+var fnc = function(work) {
+  //workの型は判定せずm01がなかったらエラーとなる
+  work.m01('test B'); 
+  return work;
 }
 
+console.log('\nsample03  objectを渡しfieldを更新して返却');
+objA = new Cls('test A');
+objA.m02();
 
-console.log('callback ネスト');
-//step1(step2(step3(log)) , log),log);
-step2(step3(log),log);
+fnc(objA);  //field p01 を更新
+objA.m02(); //更新された値が表示される
 
-※ step1(step2(step3)) の形で呼び出せないのはなぜか？
-※ step1(function(){step2(function( ... との違いは何か？  
-※ step1(step2(step3))の形で動くものを作ってみる。
- 1. 戻り値がfunctionのもの
- 2. step4の定義,step3でstep4を直書きしたものの定義
- 3. ネットのサンプル
+
