@@ -41,4 +41,10 @@ git commit -m "ccc"
 git push origin master
 
 
+-----------------------------------------------------------------
+--  ディレクトリ削除
+-----------------------------------------------------------------
+git rm -r ddd
+git commit -m "ccc"
+git push origin master
 
