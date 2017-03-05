@@ -29,6 +29,8 @@ git push -u origin master
 --  リモートからの追加方法
 -----------------------------------------------------------------
 git config --global user.name test01aa
+git config --global user.email "test01aa@example.com"
+
 git remote set-url origin https://test01aa@github.com/test01aa/node_tset.git
 git push  origin master
 
