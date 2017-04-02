@@ -1,1 +1,20 @@
-spring.jpa.hibernate.ddl-auto: create-drop
+##############################################
+# application.yml 修正内容
+##############################################
+# 「spring.jpa.hibernate.ddl-auto: create-drop」のみだと、以下のエラーが発生した。
+# エラーの内容： WARN 2148 --- [           main] o.a.tomcat.jdbc.pool.PooledConnection    : Not loading a JDBC driver as driverClassName property is null.
+##############################################
+
+#修正前
+#spring.jpa.hibernate.ddl-auto: create-drop  # → これだけだとエラー
+
+#修正後    他のプロパティも明示的に設定した。
+spring:
+  datasource:
+    driver-class-name: org.h2.driver
+    url: jdbc:h2:file:c://tmp/testdb
+    username: sa
+    password: 
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
