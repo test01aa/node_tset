@@ -23,12 +23,41 @@ public class CustomerController {
 		return new CustomerForm();
 	}
 	
-	@GetMapping
+	@RequestMapping(method = RequestMethod.GET)
 	String list(Model model){
 		List<Customer> customers = customerService.findAll();
 		model.addAttribute("customers" , customers);
 		return "customers/list";
 	}
+
+	@RequestMapping(value = "create" , method = RequestMethod.POST)
+	String create(@Validated CustomerForm form , BindingResult result , Model model){
+		if (result.hasErrors()){
+			return list(model);
+		}
+		Customer customer = new Customer();
+		BeanUtils.copyProperties(form ,customer);
+		customerService.create(customer);
+		return "redirect:/customers";
+	}
+	
+	@RequestMapping(value = "edit" , params = "form" , method = RequestMethod.GET)
+	String editForm(@RequestParam Integer id , CustomerForm form){
+		Customer customer = customerService.findOne(id);
+		BeanUtils.copyProperties(customer, form);
+		return "customers/edit";
+	}
+	
+	@RequestMapping(value = "edit" , method = RequestMethod.POST)
+	String edit(@RequestParam Integer id , @Validated CustomerForm form , BindingResult result){
+		if (result.hasErrors()){
+			return editForm(id , form);
+		}
+	}
+	
+	
+	
+	
 	
 	
 }
