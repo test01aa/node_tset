@@ -53,11 +53,22 @@ public class CustomerController {
 		if (result.hasErrors()){
 			return editForm(id , form);
 		}
+		Customer customer = new Customer();
+		BeanUtils.copyProperties(form, customer);
+		customer.setId(id);
+		customerService.update(customer);
+		return "redirect:/customers";
 	}
 	
+	@RequestMapping(value = "edit" , params = "goToTop")
+	String goToTop(){
+		return "redirect:/customers";
+	}
 	
-	
-	
-	
+	@RequestMapping(value = "delete" , method = RequestMethod.POST)
+	String delete(@RequestParam Integer id){
+		customerService.delete(id);
+		return "redirect:/customers";
+	}
 	
 }
