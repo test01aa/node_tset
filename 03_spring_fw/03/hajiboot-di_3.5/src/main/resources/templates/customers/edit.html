@@ -12,6 +12,11 @@
 <div class="container">
     <div class="col-sm-12">
         <h1>顧客管理システム</h1>
+        <p>
+          <a th:href="@{/logout}" class="btn btn-default btn-xs">ログアウト</a>
+        </p>
+        
+        <div class="col-sm-12">
         <form th:action="@{/customers/edit}" th:object="${customerForm}" class="form-horizontal" method="post">
             <fieldset>
                 <legend>顧客情報編集</legend>
@@ -44,6 +49,7 @@
                 </div>
             </fieldset>
         </form>
+        </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
