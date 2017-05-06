@@ -18,6 +18,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create-drop
+  thymeleaf:
+    cache: false
 
 security:
   basic:
