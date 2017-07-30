@@ -7,38 +7,42 @@
 
 <script type="text/javascript">
 function addTableRow() {
-	$('#testTable').append('<tr><td>データA</td><td>データB</td><td>データC</td></tr>');
+	$('#testTable tbody').append('<tr><td>データA</td><td>データB</td><td>データC</td></tr>');
 }
 function removeTableRow() {
-	$('#testTable tr:last').remove();
+	$('#testTable tbody tr:last').remove();
 }
 function clearTable() {
-	$('#testTable tr').remove();
+	$('#testTable tbody tr').remove();
 }
 </script>
 </head>
 <body>
 <table border="1" id="testTable">
-<tr>
-	<th>項目1</th>
-	<th>項目2</th>
-	<th>項目3</th>
-</tr>
-<tr>
-	<td>データ1</td>
-	<td>データ2</td>
-	<td>データ3</td>
-</tr>
-<tr>
-	<td>データ4</td>
-	<td>データ5</td>
-	<td>データ6</td>
-</tr>
-<tr>
-	<td>データ7</td>
-	<td>データ8</td>
-	<td>データ9</td>
-</tr>
+<thead>
+  <tr>
+  	<th>項目1</th>
+  	<th>項目2</th>
+  	<th>項目3</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+  	<td>データ1</td>
+  	<td>データ2</td>
+  	<td>データ3</td>
+  </tr>
+  <tr>
+  	<td>データ4</td>
+  	<td>データ5</td>
+  	<td>データ6</td>
+  </tr>
+  <tr>
+  	<td>データ7</td>
+  	<td>データ8</td>
+  	<td>データ9</td>
+  </tr>
+</tbody>
 </table>
 <input type="button" id="button1" value="行の追加" onclick="addTableRow()" />
 <input type="button" id="button2" value="行の削除" onclick="removeTableRow()" />
