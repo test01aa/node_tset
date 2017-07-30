@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQueryによるテーブル操作1</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+function addTableRow() {
+	$('#testTable').append('<tr><td>データA</td><td>データB</td><td>データC</td></tr>');
+}
+function removeTableRow() {
+	$('#testTable tr:last').remove();
+}
+function clearTable() {
+	$('#testTable tr').remove();
+}
+</script>
+</head>
+<body>
+<table border="1" id="testTable">
+<tr>
+	<th>項目1</th>
+	<th>項目2</th>
+	<th>項目3</th>
+</tr>
+<tr>
+	<td>データ1</td>
+	<td>データ2</td>
+	<td>データ3</td>
+</tr>
+<tr>
+	<td>データ4</td>
+	<td>データ5</td>
+	<td>データ6</td>
+</tr>
+<tr>
+	<td>データ7</td>
+	<td>データ8</td>
+	<td>データ9</td>
+</tr>
+</table>
+<input type="button" id="button1" value="行の追加" onclick="addTableRow()" />
+<input type="button" id="button2" value="行の削除" onclick="removeTableRow()" />
+<input type="button" id="button3" value="テーブルのクリア" onclick="clearTable()" />
+</html>
+
+
