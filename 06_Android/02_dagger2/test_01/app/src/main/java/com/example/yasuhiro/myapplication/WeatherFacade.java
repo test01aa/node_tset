@@ -8,6 +8,7 @@ import javax.inject.Inject;
 
 public class WeatherFacade {
     private WeatherRepository repository;
+
     @Inject
     public WeatherFacade(WeatherRepository repository){
         this.repository = repository;
