@@ -15,6 +15,8 @@ public class AppApplication extends Application{
     private void initializeInjector() {
         applicationComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(this))
+                .appLayerModule(new AppLayerModule())
+                .infraLayerModule(new InfraLayerModule())
                 .build();
     }
 
