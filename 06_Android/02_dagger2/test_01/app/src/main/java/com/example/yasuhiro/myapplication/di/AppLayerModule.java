@@ -11,5 +11,4 @@ public class AppLayerModule {
     public WeatherFacade provideWeatherFacade(WeatherRepository repository){
         return new WeatherFacade(repository);
     }
-
 }
