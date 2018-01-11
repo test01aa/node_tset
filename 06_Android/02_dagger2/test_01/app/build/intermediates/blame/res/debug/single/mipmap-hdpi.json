@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/home/yasuhiro/00_git/node_tset/06_Android/02_dagger2/test_01/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher_round.png",
+        "source": "/home/yasuhiro/00_git/node_tset/06_Android/02_dagger2/test_01/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/yasuhiro/00_git/node_tset/06_Android/02_dagger2/test_01/app/build/intermediates/res/merged/debug/mipmap-hdpi/ic_launcher.png",
+        "source": "/home/yasuhiro/00_git/node_tset/06_Android/02_dagger2/test_01/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    }
+]
