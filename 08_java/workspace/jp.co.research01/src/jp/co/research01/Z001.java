@@ -7,8 +7,24 @@ public class Z001 {
 	private String k02_change_cnt;
 	
 	public Z001(String data) {		
-		midasi         = data + "_midasi";
-		detail         = data + "_detail";
+		midasi = data + "_midasi";
+		detail = data + "_detail";
+	}
+
+	public String getMidasi() {
+		return midasi;
+	}
+
+	public void setMidasi(String midasi) {
+		this.midasi = midasi;
+	}
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
 	}
 
 	public String getK01_change_cnt() {
@@ -26,8 +42,5 @@ public class Z001 {
 	public void setK02_change_cnt(String k02_change_cnt) {
 		this.k02_change_cnt = k02_change_cnt;
 	}
-
-
-	
 	
 }
