@@ -29,8 +29,8 @@ public class test {
 		// 更新用データ
 		//------------------------------------
 		Z002 objZ002_01 = new Z002("01_detail" , "0" , "11" );
-		Z002 objZ002_02 = new Z002("01_detail" , "1" , "12" );
-		Z002 objZ002_03 = new Z002("01_detail" , "2" , "13" );		
+		Z002 objZ002_02 = new Z002("02_detail" , "1" , "12" );
+		Z002 objZ002_03 = new Z002("02_detail" , "2" , "13" );		
 		updateData.add(objZ002_01);
 		updateData.add(objZ002_02);
 		updateData.add(objZ002_03);
@@ -48,17 +48,32 @@ public class test {
 		//------------------------------------
 		// 元データを更新(01)
 		//------------------------------------
+		System.out.println("---- 更新用データ 01で元データを更新");
+		progress.forEach(data->{
+			String 更新データ;
+			更新データ =  updateDataMap01.get(data.getDetail());
+			System.out.println("key..." + data.getDetail() + " value..." + 更新データ);
+			if (更新データ == null ) {
+				data.setK01_change_cnt("");
+			} else {
+				data.setK01_change_cnt(更新データ);				
+			}			
+		});
+		System.out.println("---- 更新用データ 02 更新後");
+		progress.forEach(data->{
+			System.out.println(data.getDetail() + "  " + data.getK01_change_cnt() + "  " + data.getK02_change_cnt());
+		});
 
 		
 		//------------------------------------
 		// 更新用データをmapに格納（02）
 		//------------------------------------
-		HashMap<String , String> updateDataMap02 = new HashMap<String , String>();
-		System.out.println("---- 更新用データ 02");
-		updateData.forEach(data->{
-			updateDataMap02.put(data.getDetail() , data.getK02_change_cnt() );
-			System.out.println("key..." +  data.getDetail()  + "data naiyou..." + data.getK02_change_cnt());
-		});
+		//		HashMap<String , String> updateDataMap02 = new HashMap<String , String>();
+		//System.out.println("---- 更新用データ 02");
+		//updateData.forEach(data->{
+		//	updateDataMap02.put(data.getDetail() , data.getK02_change_cnt() );
+		//	System.out.println("key..." +  data.getDetail()  + "data naiyou..." + data.getK02_change_cnt());
+		//});
 
 	}
 }
