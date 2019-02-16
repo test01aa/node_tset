@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css" href="02.css">
+</head>
+<body>
+
+<div id="box" style="height: 100px; width:200px; overflow: auto">
+ <li>01</li>
+ <li>02</li>
+ <li>03</li>
+ <li>04</li>
+ <li>05</li>
+ <li>06</li>
+ <li>07</li>
+ <li>08</li>
+ <li>09</li>
+ <li>10</li>
+ <li>11</li>
+ <li>12</li>
+ <li>13</li>
+ <li>14</li>
+ <li>15</li>
+ <li>16</li>
+ <li>17</li>
+ <li>18</li>
+ <li>19</li>
+</div>
+
+<script type="text/javascript">
+  var box = document.getElementById( 'box' );
+  var lastElement = box.appendChild( document.createElement( 'div' ) );
+
+  box.onscroll = function()
+  {
+  
+      console.log('onscroll desu');
+      
+      // 表示領域の下端の位置
+      var bottom = this.scrollTop + this.clientHeight;
+
+      // 末尾の要素の上端の位置
+      var top = lastElement.offsetTop - this.offsetTop;
+
+      if( top < bottom )
+      {
+          var div = document.createElement( 'div' );
+          this.appendChild( div );
+
+          // 追加した要素を最後の要素とする
+          lastElement = div;
+      }
+  }
+</script>
+
+
+</body>
+</html>
+
+

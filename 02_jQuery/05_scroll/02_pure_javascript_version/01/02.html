@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<link rel="stylesheet" type="text/css" href="02.css">
+</head>
+<body>
+  <div id="fixedTableArea">
+      <div id="topLeftArea">
+          <table id="topLeftTable" class="fixedTable">
+              <tbody>
+                  <tr>
+                      <td>column0</td>
+                      <td>column1</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+      <div id="topRightArea">
+          <table id="topRightTable" class="fixedTable">
+              <tbody>
+                <tr>
+                  <td>column2</td>
+                  <td>column3</td>
+                  <td>column4</td>
+                  <td>column5</td>
+                  <td>column6</td>
+                  <td class="dummyColumn"></td>
+                </tr>
+              </tbody>
+          </table>
+      </div>
+      <div id="bottomLeftArea">
+          <table id="bottomLeftTable" class="fixedTable">
+              <tbody>
+                <tr><td>data0-0</td><td>data0-1</td></tr>
+                <tr><td>data1-0</td><td>data1-1</td></tr>
+                <tr><td>data2-0</td><td>data2-1</td></tr>
+                <tr><td>data3-0</td><td>data3-1</td></tr>
+                <tr><td>data4-0</td><td>data4-1</td></tr>
+                <tr><td>data5-0</td><td>data5-1</td></tr>
+                <tr><td>data6-0</td><td>data6-1</td></tr>
+                <tr><td class="dummyRow"></td><td class="dummyRow"></td></tr>
+              </tbody>
+          </table>
+      </div>
+      <div id="bottomRightArea">
+          <table id="bottomRightTable" class="fixedTable">
+              <tbody>
+                <tr><td>data0-2</td><td>data0-3</td><td>data0-4</td><td>data0-5</td><td>data0-6</td></tr>
+                <tr><td>data1-2</td><td>data1-3</td><td>data1-4</td><td>data1-5</td><td>data1-6</td></tr>
+                <tr><td>data2-2</td><td>data2-3</td><td>data2-4</td><td>data2-5</td><td>data2-6</td></tr>
+                <tr><td>data3-2</td><td>data3-3</td><td>data3-4</td><td>data3-5</td><td>data3-6</td></tr>
+                <tr><td>data4-2</td><td>data4-3</td><td>data4-4</td><td>data4-5</td><td>data4-6</td></tr>
+                <tr><td>data5-2</td><td>data5-3</td><td>data5-4</td><td>data5-5</td><td>data5-6</td></tr>
+                <tr><td>data6-2</td><td>data6-3</td><td>data6-4</td><td>data6-5</td><td>data6-6</td></tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+<script >
+  $('#bottomRightArea').scroll(function(e) {
+      $('#bottomLeftArea').scrollTop($(this).scrollTop()); // 左下のDIVのスクロール位置を更新
+      $('#topRightArea').scrollLeft($(this).scrollLeft()); // 右上のDIVのスクロール位置を更新
+  });
+</script>
+
+</body>
+</html>
